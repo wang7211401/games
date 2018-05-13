@@ -9,7 +9,22 @@ body {
     margin: 0;
     padding: 0;
 }
-
+.icon {
+   width: 1em; height: 1em;
+   vertical-align: -0.15em;
+   fill: currentColor;
+   overflow: hidden;
+}
+.start{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+}
+.start .icon{
+    width: 100px;
+    height: 100px;
+}
 .background {
     height: 100%;
     background-color: #ded895;
