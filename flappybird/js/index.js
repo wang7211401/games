@@ -13,12 +13,12 @@ var app = {
     this.playing = false //标记是否游戏中
     this.pipeData = [] //管道存放的数组
     this.scoreEl = document.getElementsByClassName('score')[0]
-    this.start = document.querySelector('.icon')
+    this.start = document.querySelector('.start')
     this.score = 0
     var _this = this
 
     this.start .onclick = function(){
-      document.querySelector('.icon').style.display = 'none'
+      _this.start.style.display = 'none'
       _this.playing || _this.startGame()
     }
     this.main.onclick=function(){
@@ -31,7 +31,7 @@ var app = {
     // }
     window.onkeydown = function (e) {
         if (e.keyCode == 13) {
-            document.querySelector('.icon').style.display = 'none'
+            _this.start.style.display = 'none'
             _this.playing || _this.startGame()
         }
         if (e.keyCode == 32) {
@@ -106,7 +106,7 @@ var app = {
     })
   },
   endGame:function(){  /* 结束游戏，停止周期计时,停止动画 */
-    document.querySelector('.icon').style.display = 'inline'
+    this.start.style.display = 'block'
     this.playing = false
     document.body.className = 'stop'
     clearInterval(this.birdTimer)
